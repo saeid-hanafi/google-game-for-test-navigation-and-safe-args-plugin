@@ -38,7 +38,7 @@ class TitleScreen : Fragment() {
             findNavController().navigate(R.id.action_titleScreen_to_register)
         }
         view.findViewById<Button>(R.id.leaderboard_btn).setOnClickListener {
-
+            findNavController().navigate(R.id.action_titleScreen_to_leaderBoard)
         }
 
         return view

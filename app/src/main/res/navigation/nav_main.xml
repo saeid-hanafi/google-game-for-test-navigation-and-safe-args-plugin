@@ -56,4 +56,23 @@
             app:popUpToInclusive="true"/>
     </fragment>
     <include app:graph="@navigation/auth_nav"/>
+    <fragment
+        android:id="@+id/leaderboard"
+        android:name="com.example.android.navigationsample.Leaderboard"
+        android:label="fragment_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" >
+        <action
+            android:id="@+id/action_leaderboard_to_userProfile"
+            app:destination="@id/userProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfile"
+        android:name="com.example.android.navigationsample.UserProfile"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <argument
+            android:name="userName"
+            app:argType="string"
+            android:defaultValue="Saeed" />
+    </fragment>
 </navigation>

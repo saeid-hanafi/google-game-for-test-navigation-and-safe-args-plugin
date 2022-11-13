@@ -22,6 +22,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 /**
  * Shows a warning-up screen.
@@ -33,7 +34,7 @@ class Match : Fragment() {
         val view = inflater.inflate(R.layout.fragment_match, container, false)
 
         view.findViewById<View>(R.id.play_btn3).setOnClickListener {
-
+            findNavController().navigate(R.id.action_match_to_inGame)
         }
         return view
     }

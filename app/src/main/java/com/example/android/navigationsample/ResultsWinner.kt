@@ -23,6 +23,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 /**
  * Shows the winning screen.
@@ -35,7 +36,7 @@ class ResultsWinner : Fragment() {
         val view = inflater.inflate(R.layout.fragment_results_winner, container, false)
 
         view.findViewById<Button>(R.id.play_btn2).setOnClickListener {
-
+            findNavController().navigate(R.id.action_resultsWinner_to_match)
         }
 
         view.findViewById<Button>(R.id.leaderboard_btn2).setOnClickListener {

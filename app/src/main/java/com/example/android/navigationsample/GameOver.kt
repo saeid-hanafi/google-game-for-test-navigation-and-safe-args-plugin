@@ -22,6 +22,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 
 /**
@@ -35,7 +36,7 @@ class GameOver : Fragment() {
         val view = inflater.inflate(R.layout.fragment_game_over, container, false)
 
         view.findViewById<View>(R.id.play_btn4).setOnClickListener {
-
+            findNavController().navigate(R.id.action_gameOver_to_match)
         }
         return view
     }

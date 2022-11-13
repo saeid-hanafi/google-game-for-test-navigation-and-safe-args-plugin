@@ -22,6 +22,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 /**
  * Shows a question and four answers.
@@ -34,7 +35,7 @@ class InGame : Fragment() {
         val view = inflater.inflate(R.layout.fragment_in_game, container, false)
 
         val gameOverListener: (View) -> Unit = {
-
+            findNavController().navigate(R.id.action_inGame_to_gameOver)
         }
 
         view.findViewById<View>(R.id.checkBox).setOnClickListener(gameOverListener)
@@ -42,7 +43,7 @@ class InGame : Fragment() {
         view.findViewById<View>(R.id.checkBox4).setOnClickListener(gameOverListener)
 
         view.findViewById<View>(R.id.checkBox3).setOnClickListener {
-
+            findNavController().navigate(R.id.action_inGame_to_resultsWinner)
         }
 
         return view

@@ -23,6 +23,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 /**
  * Shows the main title screen.
@@ -34,7 +35,7 @@ class TitleScreen : Fragment() {
         val view = inflater.inflate(R.layout.fragment_title_screen, container, false)
 
         view.findViewById<Button>(R.id.play_btn).setOnClickListener {
-
+            findNavController().navigate(R.id.action_titleScreen_to_register)
         }
         view.findViewById<Button>(R.id.leaderboard_btn).setOnClickListener {
 

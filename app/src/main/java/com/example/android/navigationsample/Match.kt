@@ -39,4 +39,12 @@ class Match : Fragment() {
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+        val userManager = UserManager(context)
+        if (userManager.username.isEmpty()) {
+            findNavController().navigate(R.id.action_match_to_navigation)
+        }
+    }
+
 }

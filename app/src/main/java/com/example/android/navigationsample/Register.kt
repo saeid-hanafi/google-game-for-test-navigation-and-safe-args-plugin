@@ -22,8 +22,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 
 
 /**
@@ -35,9 +37,22 @@ class Register : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_register, container, false)
+        val username = view.findViewById<EditText>(R.id.username_text)
+        val email = view.findViewById<EditText>(R.id.email_text)
+        val pass = view.findViewById<EditText>(R.id.password_text)
 
         view.findViewById<Button>(R.id.signup_btn).setOnClickListener {
-            findNavController().navigate(R.id.action_register_to_match)
+            if (username.length() > 0 && email.length() > 0 && pass.length() > 0) {
+                val userManager = UserManager(context)
+                val userSignUp = userManager.saveSignUp(username.toString(), email.toString(), pass.toString())
+                if (userSignUp)
+                    findNavController().navigate(R.id.action_register_to_match)
+                else
+                    Snackbar.make(view, "Error on add user processing, Try again Please!", Snackbar.LENGTH_SHORT).show()
+            }else{
+                Snackbar.make(view, "All Fields Is Required!", Snackbar.LENGTH_SHORT).show()
+            }
+
         }
         return view
     }

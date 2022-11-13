@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleScreen">
+    <fragment
+        android:id="@+id/titleScreen"
+        android:name="com.example.android.navigationsample.TitleScreen"
+        android:label="fragment_title_screen"
+        tools:layout="@layout/fragment_title_screen">
+        <action
+            android:id="@+id/action_titleScreen_to_register"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.android.navigationsample.Register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_match"
+            app:destination="@id/match"
+            app:popUpTo="@id/match"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

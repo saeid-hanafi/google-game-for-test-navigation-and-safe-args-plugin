@@ -3,26 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/titleScreen">
+    app:startDestination="@id/match">
 
-    <fragment
-        android:id="@+id/titleScreen"
-        android:name="com.example.android.navigationsample.TitleScreen"
-        android:label="fragment_title_screen"
-        tools:layout="@layout/fragment_title_screen" >
-        <action
-            android:id="@+id/action_titleScreen_to_register"
-            app:destination="@id/register" />
-    </fragment>
-    <fragment
-        android:id="@+id/register"
-        android:name="com.example.android.navigationsample.Register"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
-        <action
-            android:id="@+id/action_register_to_match"
-            app:destination="@id/match" />
-    </fragment>
     <fragment
         android:id="@+id/match"
         android:name="com.example.android.navigationsample.Match"
@@ -31,6 +13,9 @@
         <action
             android:id="@+id/action_match_to_inGame"
             app:destination="@id/inGame" />
+        <action
+            android:id="@+id/action_match_to_navigation"
+            app:destination="@id/navigation" />
     </fragment>
     <fragment
         android:id="@+id/inGame"
@@ -70,4 +55,5 @@
             app:popUpTo="@id/match"
             app:popUpToInclusive="true"/>
     </fragment>
+    <include app:graph="@navigation/auth_nav"/>
 </navigation>

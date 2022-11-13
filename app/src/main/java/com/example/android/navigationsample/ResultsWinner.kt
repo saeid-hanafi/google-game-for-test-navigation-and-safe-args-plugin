@@ -40,7 +40,7 @@ class ResultsWinner : Fragment() {
         }
 
         view.findViewById<Button>(R.id.leaderboard_btn2).setOnClickListener {
-
+            findNavController().navigate(R.id.action_resultsWinner_to_leaderboard)
         }
         return view
     }

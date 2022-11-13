@@ -43,6 +43,11 @@
             app:destination="@id/match"
             app:popUpTo="@id/match"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_resultsWinner_to_leaderboard"
+            app:destination="@id/leaderboard"
+            app:popUpTo="@id/match"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/gameOver"
